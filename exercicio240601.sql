@@ -75,14 +75,16 @@ DELETE FROM tb_personagens WHERE HABILIDADE;
 
 SELECT * FROM tb_personagens;
 -- 
-SELECT * FROM tb_personagens WHERE ATK > 2000;
-SELECT * FROM tb_personagens WHERE DEF > 999 AND DEF < 2001 ;
+SELECT * FROM tb_personagens WHERE ATK >= 2000;
+SELECT * FROM tb_personagens WHERE DEF >= 999 AND DEF <= 2001 ;
 SELECT * FROM tb_personagens
  WHERE DEF BETWEEN '1000' AND '2000';
 
 SELECT * FROM tb_personagens
-INNER JOIN tb_classes ON tb_classes.id = tb_personagens.CLASSE 
-INNER JOIN habilidades ON habilidades.id = tb_personagens.HABILIDADE;
+INNER JOIN tb_classes ON tb_classes.id = tb_personagens.CLASSE WHERE tb_classes.id = 1;
+-- INNER JOIN habilidades ON habilidades.id = tb_personagens.HABILIDADE;
+
+
 
 -- Buscando todos os personagens com a letra c no nome
 SELECT * FROM tb_personagens
